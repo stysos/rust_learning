@@ -24,6 +24,8 @@ fn main() {
     // CANT_CHANGE_ME += 1;
     let _longstring: String = "haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".repeat(127);
 
+    println!("{_longstring}");
+
     let length_x: i8 = process_string(_longstring).try_into().expect("AHHH");
     
     println!("{length_x}");
