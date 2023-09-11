@@ -4,7 +4,7 @@ fn main() {
     const CANT_CHANGE_ME: u32 = 69420;
     let mut x: i32 = 5;
     println!("The value of x is {x}");
-    x += 6;
+    x += 6*10_i32.pow(8);
     println!("{x} is x");
     println!("Can't change me {CANT_CHANGE_ME}");
     let x_string: String = x.to_string();
@@ -22,4 +22,14 @@ fn main() {
     password = hex::encode(password);
     println!("{password}");
     // CANT_CHANGE_ME += 1;
+    let _longstring: String = "haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".repeat(127);
+
+    let length_x: i8 = process_string(_longstring).try_into().expect("AHHH");
+    
+    println!("{length_x}");
+}
+
+
+fn process_string(string: String) -> usize {
+    string.len()
 }
