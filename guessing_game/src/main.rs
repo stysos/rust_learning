@@ -5,6 +5,9 @@ use std::cmp::Ordering;
 fn main() {
     println!("Guess the number:!");
 
+    loop {
+
+    
     println!("Please input your guess");
 
     let mut guess = String::new();
@@ -27,4 +30,5 @@ fn main() {
         Ordering::Greater => println!("Too big"),
         Ordering::Equal => println!("Just right"),
     }
+}
 }
