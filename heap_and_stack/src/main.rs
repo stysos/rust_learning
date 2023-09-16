@@ -46,7 +46,7 @@ fn main() {
     println!("{new_str} is still safely here");
 
     let mut string_to_edit = "new".to_string();
-    let end_value = " potato"; // This is in the heap ? 
+    let end_value = " potato"; // This is in the stack
 
 
 
