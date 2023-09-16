@@ -46,12 +46,16 @@ fn main() {
     println!("{new_str} is still safely here");
 
     let mut string_to_edit = "new".to_string();
-    let end_value = " potato";
+    let end_value = " potato"; // This is in the heap ? 
+
 
 
     push_value(&mut string_to_edit, &end_value);
-    println!("{}", string_to_edit)
+    println!("{}", string_to_edit);
 
+    let mut_ref_string_to_edit: &mut str = &mut string_to_edit;
+
+    println!("{} mutable reference can only occur after past reference used", mut_ref_string_to_edit)
 
 }
 
