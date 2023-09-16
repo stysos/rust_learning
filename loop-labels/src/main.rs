@@ -12,6 +12,15 @@ fn main() {
     conditional_loops();
 
     for_loop();
+
+    let person = Person::new("Bob", 30);
+    person.greet();
+
+    if Person::is_adult(person.age) {
+        println!("{} is an adult", person.name);
+    } else {
+        println!("{} is not an adult", person.name);
+    }
 }
 
 fn conditional_loops() { 
@@ -40,3 +49,24 @@ fn for_loop() {
     }
 }
 
+struct Person {
+    name: String,
+    age: u8,
+}
+
+impl Person {
+    fn new(name: &str, age: u8) -> Self {
+        Person { 
+            name: name.to_string(),
+            age
+        }
+    }
+
+    fn greet(&self) {
+        println!("Hello my name is {} and I am {} years old", self.name, self.age)
+    }
+
+    fn is_adult(age: u8) -> bool {
+        age >= 18
+    }
+}
