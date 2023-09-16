@@ -1,3 +1,5 @@
+use std::string;
+
 fn main() {
     let s = "Hello"; // This is a str literal (Stack; pre-determined size and immutable)
 
@@ -43,6 +45,18 @@ fn main() {
 
     println!("{new_str} is still safely here");
 
+    let mut string_to_edit = "new".to_string();
+    let end_value = " potato";
+
+
+    push_value(&mut string_to_edit, &end_value);
+    println!("{}", string_to_edit)
+
+
+}
+
+fn push_value(string_to_edit: &mut String, edit_value: &str) {
+    string_to_edit.push_str(edit_value);
 }
 
 fn variable_stealer(some_string: String) -> String {
@@ -57,3 +71,4 @@ fn not_variable_stealer(some_string: &String) {
 fn type_of<T>(_: &T) -> &'static str {
     std::any::type_name::<T>()
 }
+
